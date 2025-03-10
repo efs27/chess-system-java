@@ -1,8 +1,8 @@
-package chess_system;
+package application;
 
 import boardgame.Position;
 
-public class application {
+public class Program {
 
 	public static void main(String[] args) {
 
