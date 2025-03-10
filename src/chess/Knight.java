@@ -17,10 +17,10 @@ public class Knight extends ChessPiece {
 	}
 
 	protected void increaseMoveCount() {
-		this.setMoveCount(1);;
+		this.setMoveCount(1);
 	}
 
 	protected void decreaseMoveCount() {
-		this.setMoveCount(-1);;
+		this.setMoveCount(-1);
 	}
 }

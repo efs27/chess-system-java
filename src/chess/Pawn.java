@@ -21,11 +21,9 @@ public class Pawn extends ChessPiece {
 
 	protected void increaseMoveCount() {
 		this.setMoveCount(1);
-		;
 	}
 
 	protected void decreaseMoveCount() {
 		this.setMoveCount(-1);
-		;
 	}
 }
