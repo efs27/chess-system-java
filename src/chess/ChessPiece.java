@@ -1,43 +1,27 @@
 package chess;
 
+import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
 
-public class ChessPiece extends Piece {
+public abstract class ChessPiece extends Piece {
 
 	private Color color;
 	private int moveCount;
 
-	public ChessPiece(Color color, int moveCount) {
-		super();
+	public ChessPiece(Board board, Color color) {
+		super(board);
 		this.color = color;
-		this.moveCount = moveCount;
-	}	
+	}
 
 	public Color getColor() {
 		return color;
 	}
-
-	public void setColor(Color color) {
-		this.color = color;
-	}
-
+	
 	public int getMoveCount() {
 		return moveCount;
 	}
-
-	public void setMoveCount(int moveCount) {
-		this.moveCount += moveCount;
-	}
-
-	public void getChessPosition() {
-
-	}
-
-	protected boolean isThereOpponentPiece(Position position) {
-		return true;
-	}
-
+	
 	protected void increaseMoveCount() {
 		moveCount++;
 	}
@@ -46,4 +30,12 @@ public class ChessPiece extends Piece {
 		moveCount--;
 	}
 
+	public ChessPosition getChessPosition() {
+		return ChessPosition.fromPosition(position);
+	}
+	
+	protected boolean isThereOpponentPiece(Position position) {
+		ChessPiece p = (ChessPiece)getBoard().piece(position);
+		return p != null && p.getColor() != color;
+	}
 }
